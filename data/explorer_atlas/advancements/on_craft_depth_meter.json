@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "craft_atlas": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "explorer_atlas:depth_meter"
+      }
+    }
+  },
+  "rewards": {
+    "function": "explorer_atlas:on_craft_depth_meter"
+  }
+}

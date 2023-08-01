@@ -1,0 +1,23 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "translate": "item.explorer_atlas.atlas",
+                "fallback": "Explorer Atlas",
+                "italic": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

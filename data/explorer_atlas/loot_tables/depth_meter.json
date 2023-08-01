@@ -1,0 +1,27 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:firework_star",
+          "functions": [
+            {
+              "function": "set_name",
+              "name": {
+                "translate": "item.explorer_atlas.depth_meter",
+                "fallback": "Depth Meter",
+                "italic": false
+              }
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{explorer_atlas:{has_depth_meter:1b},HideFlags:32,Explosion:{Type:0,Colors:[I;16751943]}}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

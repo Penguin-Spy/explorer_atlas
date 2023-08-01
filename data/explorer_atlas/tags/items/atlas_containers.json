@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:map",
+    "minecraft:filled_map",
+    "minecraft:book"
+  ]
+}

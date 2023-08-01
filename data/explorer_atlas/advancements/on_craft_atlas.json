@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "craft_atlas": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "explorer_atlas:atlas"
+      }
+    }
+  },
+  "rewards": {
+    "function": "explorer_atlas:on_craft_atlas"
+  }
+}
