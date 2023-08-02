@@ -10,6 +10,16 @@ execute unless data storage explorer_atlas:data {last_version: 1.0d} run tellraw
 execute unless data storage explorer_atlas:data {last_version: 1.0d} run tellraw @a ["Use ",{"text":"/function explorer_atlas:settings","color":"gray","clickEvent":{"action":"run_command","value":"/function explorer_atlas:settings"},"hoverEvent":{"action":"show_text","contents":["Click to run"]}}," to configure the datapack."]
 data modify storage explorer_atlas:data last_version set value 1.0d
 
+scoreboard objectives add explorer_atlas.temp dummy
+# heading offset
+scoreboard players set _180 explorer_atlas.temp 180
+# time constants
+scoreboard players set _5 explorer_atlas.temp 5
+scoreboard players set _18 explorer_atlas.temp 18
+scoreboard players set _60 explorer_atlas.temp 60
+scoreboard players set _24 explorer_atlas.temp 24
 
-schedule clear explorer_atlas:update
-function explorer_atlas:update
+#scoreboard player set $cfg.depth_offset explorer_atlas.temp ???
+
+schedule clear explorer_atlas:tick
+function explorer_atlas:tick

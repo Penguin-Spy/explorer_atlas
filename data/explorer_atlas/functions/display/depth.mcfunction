@@ -1,5 +1,6 @@
-execute if data storage explorer_atlas:temp string run data modify storage explorer_atlas:temp string append value " | "
-data modify storage explorer_atlas:temp string append value "Depth: "
+execute if data storage explorer_atlas:temp string run data modify storage explorer_atlas:temp string append value '{"text":" | ","color":"dark_gray"}'
+data modify storage explorer_atlas:temp string append value '{"text":"Depth: ","color":"gold"}'
 
-execute store result storage explorer_atlas:temp temp int 1 run data get entity @s Pos[1]
-data modify storage explorer_atlas:temp string append string storage explorer_atlas:temp temp
+execute store result score $depth explorer_atlas.temp run data get entity @s Pos[1]
+scoreboard players operation $depth explorer_atlas.temp += $cfg.depth_offset explorer_atlas.temp
+data modify storage explorer_atlas:temp string append value '[{"score":{"name":"$depth","objective":"explorer_atlas.temp"},"color":"white"},"m"]'
