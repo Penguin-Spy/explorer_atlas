@@ -14,6 +14,22 @@
                 "fallback": "Explorer Atlas",
                 "italic": false
               }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "translate": "item.explorer_atlas.atlas_description.maps",
+                  "fallback": "%s maps",
+                  "with": [ 0 ],
+                  "color": "gray",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{explorer_atlas:{}}"
             }
           ]
         }

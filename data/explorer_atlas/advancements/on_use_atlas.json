@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "use_atlas": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "explorer_atlas:sneaking_with_atlas"
+          }
+        ],
+        "entity": {
+          "nbt": "{Tags:[\"explorer_atlas.atlas_interactor\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "explorer_atlas:on_use_atlas"
+  }
+}

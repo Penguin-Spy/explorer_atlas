@@ -21,5 +21,10 @@ scoreboard players set _24 explorer_atlas.temp 24
 
 #scoreboard player set $cfg.depth_offset explorer_atlas.temp ???
 
+# initalize the yellow shulker box (outside world border, y0 to work with any world height)
+forceload add -30000000 2435
+setblock -30000000 0 2435 yellow_shulker_box
+
+
 schedule clear explorer_atlas:tick
 function explorer_atlas:tick
