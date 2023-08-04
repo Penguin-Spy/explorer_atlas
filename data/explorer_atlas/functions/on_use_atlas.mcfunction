@@ -4,3 +4,5 @@ advancement revoke @s only explorer_atlas:on_use_atlas
 execute if predicate explorer_atlas:offhand_clock run function explorer_atlas:atlas_editing/try_add_clock
 execute if predicate explorer_atlas:offhand_compass run function explorer_atlas:atlas_editing/try_add_compass
 execute if predicate explorer_atlas:offhand_depth_meter run function explorer_atlas:atlas_editing/try_add_depth_meter
+
+execute if predicate explorer_atlas:offhand_filled_map run function explorer_atlas:atlas_editing/try_add_filled_map

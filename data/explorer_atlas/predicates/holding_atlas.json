@@ -8,7 +8,7 @@
         "equipment": {
           "mainhand": {
             "tag": "explorer_atlas:atlas_containers",
-            "nbt": "{explorer_atlas:{}}"
+            "nbt": "{explorer_atlas:{is_atlas:1b}}"
           }
         }
       }
@@ -20,7 +20,7 @@
         "equipment": {
           "offhand": {
             "tag": "explorer_atlas:atlas_containers",
-            "nbt": "{explorer_atlas:{}}"
+            "nbt": "{explorer_atlas:{is_atlas:1b}}"
           }
         }
       }

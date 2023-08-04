@@ -1,0 +1,1 @@
+$data modify storage explorer_atlas:temp atlas.tag.display.Lore[0] set value '{"italic":false,"color":"gray","translate":"item.explorer_atlas.atlas_description.maps","fallback":"%s maps","with":["$(map_count)"]}'

@@ -29,7 +29,7 @@
             },
             {
               "function": "minecraft:set_nbt",
-              "tag": "{explorer_atlas:{}}"
+              "tag": "{explorer_atlas:{is_atlas:1b,map_count:0}}"
             }
           ]
         }

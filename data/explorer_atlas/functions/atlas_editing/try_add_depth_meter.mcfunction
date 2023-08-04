@@ -1,7 +1,7 @@
 # delay the actionbar hud from showing
 scoreboard players set @s explorer_atlas.hud_delay 20
 
-# if there's already a clock, display message & return early
+# if there's already a depth meter, display message & return early
 execute if data entity @s SelectedItem.tag.explorer_atlas.has_depth_meter run title @s actionbar {"translate":"explorer_atlas.atlas_has_item","fallback": "This explorer atlas already has a %s","with": [{"translate":"item.explorer_atlas.depth_meter","fallback":"Depth Meter"}]}
 execute if data entity @s SelectedItem.tag.explorer_atlas.has_depth_meter run return 1
 
