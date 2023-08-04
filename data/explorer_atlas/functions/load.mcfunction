@@ -12,14 +12,22 @@ data modify storage explorer_atlas:data last_version set value 1.0d
 
 scoreboard objectives add explorer_atlas.temp dummy
 # heading offset
-scoreboard players set _180 explorer_atlas.temp 180
-# time constants
-scoreboard players set _5 explorer_atlas.temp 5
-scoreboard players set _18 explorer_atlas.temp 18
-scoreboard players set _60 explorer_atlas.temp 60
-scoreboard players set _24 explorer_atlas.temp 24
+scoreboard players set #180 explorer_atlas.temp 180
+# time offset
+scoreboard players set #6 explorer_atlas.temp 6
+# time calculation constants
+scoreboard players set #5 explorer_atlas.temp 5
+scoreboard players set #18 explorer_atlas.temp 18
+scoreboard players set #60 explorer_atlas.temp 60
+scoreboard players set #24 explorer_atlas.temp 24
+# map coord calculation constants
+scoreboard players set #128 explorer_atlas.temp 128
+scoreboard players set #64 explorer_atlas.temp 64
 
 #scoreboard player set $cfg.depth_offset explorer_atlas.temp ???
+# used to delay showing the actionbar hud after editing the atlas (so the edit message shows up)
+scoreboard objectives add explorer_atlas.hud_delay dummy
+
 
 # initalize the yellow shulker box (outside world border, y0 to work with any world height)
 forceload add -30000000 2435

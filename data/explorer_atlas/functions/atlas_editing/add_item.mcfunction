@@ -1,4 +1,5 @@
 item modify entity @s weapon.offhand explorer_atlas:remove_1
+playsound minecraft:item.armor.equip_leather player @s
 
 # load item from players hand
 data modify storage explorer_atlas:temp item set from entity @s SelectedItem
