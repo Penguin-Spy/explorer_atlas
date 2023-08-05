@@ -29,9 +29,10 @@ scoreboard players set #64 explorer_atlas.temp 64
 scoreboard objectives add explorer_atlas.hud_delay dummy
 
 
-# initalize the yellow shulker box (outside world border, y0 to work with any world height)
-forceload add -30000000 2435
-setblock -30000000 0 2435 yellow_shulker_box
+# initalize the yellow shulker box & cherry sign (outside world border, y0 to work with any world height)
+execute in minecraft:overworld run forceload add -30000000 2435
+execute in minecraft:overworld run setblock -30000000 0 2435 yellow_shulker_box
+execute in minecraft:overworld run setblock -30000000 1 2435 cherry_sign
 
 
 schedule clear explorer_atlas:tick

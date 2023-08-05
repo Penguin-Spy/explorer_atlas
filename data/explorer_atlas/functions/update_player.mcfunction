@@ -23,6 +23,9 @@ execute if data storage explorer_atlas:temp string run tag @s add explorer_atlas
 execute unless score @s explorer_atlas.hud_delay matches 1.. if entity @s[tag=explorer_atlas.showing_actionbar] unless data storage explorer_atlas:temp string run title @s actionbar ""
 execute unless data storage explorer_atlas:temp string run tag @s remove explorer_atlas.showing_actionbar
 
+# countdown hud delay
+execute if score @s explorer_atlas.hud_delay matches 1.. run scoreboard players remove @s explorer_atlas.hud_delay 1
+
 
 # update interaction entity stuff
 execute if entity @s[tag=explorer_atlas.has_interactor] unless predicate explorer_atlas:sneaking_with_atlas run function explorer_atlas:atlas_editing/remove_interactor
@@ -32,5 +35,6 @@ execute unless entity @s[tag=explorer_atlas.has_interactor] if predicate explore
 execute if entity @s[tag=explorer_atlas.has_interactor] run execute positioned ~ ~0.77 ~ run tp @e[type=interaction,tag=explorer_atlas.atlas_interactor,limit=1,sort=nearest] ~ ~ ~
 
 
-# countdown hud delay
-execute if score @s explorer_atlas.hud_delay matches 1.. run scoreboard players remove @s explorer_atlas.hud_delay 1
+# update held atlas
+execute if predicate explorer_atlas:mainhand_atlas run function explorer_atlas:atlas_rendering/update_mainhand
+execute if predicate explorer_atlas:offhand_atlas run function explorer_atlas:atlas_rendering/update_offhand

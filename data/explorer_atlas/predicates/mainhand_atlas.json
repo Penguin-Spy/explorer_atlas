@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "mainhand": {
+        "tag": "explorer_atlas:atlas_containers",
+        "nbt": "{explorer_atlas:{is_atlas:1b}}"
+      }
+    }
+  }
+}

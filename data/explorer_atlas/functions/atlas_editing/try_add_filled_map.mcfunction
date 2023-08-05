@@ -7,15 +7,17 @@ data modify storage explorer_atlas:temp atlas set from entity @s SelectedItem
 # load map item from offhand, removing the Slot tag
 data modify storage explorer_atlas:temp offhand_map set from entity @s Inventory[{Slot:-106b}]
 data remove storage explorer_atlas:temp offhand_map.Slot
+data remove storage explorer_atlas:temp offhand_map.Count
 
 
 ### Check that the map can be added
 
 # check that the map data is correct
 execute store result score $result explorer_atlas.temp run function explorer_atlas:atlas_editing/check_map_data
-execute if score $result explorer_atlas.temp matches 1 run title @s actionbar {"translate":"explorer_atlas.atlas_scale_mismatch","fallback": "This map's scale doesn't match maps already in the atlas"}
+execute if score $result explorer_atlas.temp matches 1 run title @s actionbar {"translate":"explorer_atlas.map_scale_mismatch","fallback": "This map's scale doesn't match maps already in the atlas"}
 execute if score $result explorer_atlas.temp matches 2 run tellraw @s {"translate":"explorer_atlas.map_data_missing","fallback": "This map is missing required data!"}
 execute if score $result explorer_atlas.temp matches 2 run tellraw @s {"translate":"explorer_atlas.map_data_missing_hint","fallback": "Run <todo: this command> to fix this."}
+execute if score $result explorer_atlas.temp matches 3 run title @s actionbar {"translate":"explorer_atlas.map_is_atlas","fallback": "Cannot add an atlas to an atlas"}
 # return early if the data was incorrect
 execute if score $result explorer_atlas.temp matches 1.. run return 0
 
@@ -43,9 +45,9 @@ execute store result storage explorer_atlas:temp atlas.tag.explorer_atlas.map_co
 function explorer_atlas:atlas_editing/update_map_count_lore with storage explorer_atlas:temp atlas.tag.explorer_atlas
 
 # load atlas back into players hand
-data remove block -30000000 0 2435 Items
-data modify block -30000000 0 2435 Items append from storage explorer_atlas:temp atlas
-item replace entity @s weapon.mainhand from block -30000000 0 2435 container.0
+execute in minecraft:overworld run data remove block -30000000 0 2435 Items
+execute in minecraft:overworld run data modify block -30000000 0 2435 Items append from storage explorer_atlas:temp atlas
+execute in minecraft:overworld run item replace entity @s weapon.mainhand from block -30000000 0 2435 container.0
 
 
 # remove map & play sound
