@@ -11,7 +11,8 @@ data remove storage explorer_atlas:temp string
 # [6] <elevation>
 
 # time, heading, elevation
-execute if predicate explorer_atlas:holding_clock run data modify storage explorer_atlas:temp string append value '{"nbt":"time","storage":"explorer_atlas:temp","interpret":true}'
+execute if predicate explorer_atlas:holding_clock unless predicate explorer_atlas:display_random run data modify storage explorer_atlas:temp string append value '{"nbt":"time","storage":"explorer_atlas:temp","interpret":true}'
+execute if predicate explorer_atlas:holding_clock if predicate explorer_atlas:display_random run data modify storage explorer_atlas:temp string append value '{"nbt":"random_time","storage":"explorer_atlas:temp","interpret":true}'
 execute if predicate explorer_atlas:holding_compass run function explorer_atlas:display/heading
 execute if predicate explorer_atlas:holding_depth_meter run function explorer_atlas:display/elevation
 

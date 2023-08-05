@@ -4,7 +4,7 @@ scoreboard players set @s explorer_atlas.hud_delay 20
 # load atlas item from players hand
 data modify storage explorer_atlas:temp atlas set from entity @s SelectedItem
 
-# load map item from offhand, removing the Slot tag
+# load map item from offhand, removing the Slot & Count tag (ignored when rendering item, remove them to not store unnecessary data)
 data modify storage explorer_atlas:temp offhand_map set from entity @s Inventory[{Slot:-106b}]
 data remove storage explorer_atlas:temp offhand_map.Slot
 data remove storage explorer_atlas:temp offhand_map.Count

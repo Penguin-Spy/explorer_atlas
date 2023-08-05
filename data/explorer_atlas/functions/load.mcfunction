@@ -37,3 +37,6 @@ execute in minecraft:overworld run setblock -30000000 1 2435 cherry_sign
 
 schedule clear explorer_atlas:tick
 function explorer_atlas:tick
+
+schedule clear explorer_atlas:update_random
+function explorer_atlas:update_random
