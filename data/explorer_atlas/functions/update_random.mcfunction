@@ -1,5 +1,5 @@
 # random heading
-execute store result score $random.heading explorer_atlas.temp run random value 0..359
+execute store result score $random.heading explorer_atlas.temp run random value -180..179
 
 # random elevation
 execute store result score $random.elevation explorer_atlas.temp run random value -999..-900
