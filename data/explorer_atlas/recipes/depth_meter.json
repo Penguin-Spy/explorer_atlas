@@ -15,5 +15,6 @@
   },
   "result": {
     "item": "minecraft:knowledge_book"
-  }
+  },
+  "show_notification": false
 }

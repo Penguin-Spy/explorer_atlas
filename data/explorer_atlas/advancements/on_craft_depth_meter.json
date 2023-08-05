@@ -1,9 +1,9 @@
 {
   "criteria": {
     "craft_atlas": {
-      "trigger": "minecraft:recipe_unlocked",
+      "trigger": "minecraft:recipe_crafted",
       "conditions": {
-        "recipe": "explorer_atlas:depth_meter"
+        "recipe_id": "explorer_atlas:depth_meter"
       }
     }
   },
