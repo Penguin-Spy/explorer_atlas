@@ -1,7 +1,3 @@
-# calculate current time values
-function explorer_atlas:build_time_string
+execute as @a[scores={explorer_atlas.used_map=1..}] at @s run function explorer_atlas:on_use_map
 
-# update all players
-execute as @a at @s run function explorer_atlas:update_player
-
-schedule function explorer_atlas:tick 2t
+schedule function explorer_atlas:tick 1t

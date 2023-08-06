@@ -1,13 +1,9 @@
-# calc map coords
-function explorer_atlas:atlas_rendering/calculate_map_coords
-# move to args for calling find_map
-execute store result storage explorer_atlas:temp arguments.map_x int 1 run scoreboard players get $x explorer_atlas.temp
-execute store result storage explorer_atlas:temp arguments.map_z int 1 run scoreboard players get $z explorer_atlas.temp
-data modify storage explorer_atlas:temp arguments.map_dimension set from entity @s Dimension
+# calc map coords (stored in explorer_atlas:temp map_data)
+function explorer_atlas:calculate_map_data
 
 # call find_map
 data remove storage explorer_atlas:temp found_map
-execute store result score $result explorer_atlas.temp run function explorer_atlas:find_map with storage explorer_atlas:temp arguments
+execute store result score $result explorer_atlas.temp run function explorer_atlas:find_map with storage explorer_atlas:temp map_data
 execute if score $result explorer_atlas.temp matches 0 run title @s actionbar {"translate":"explorer_atlas.error","fallback": "An unknown error occured","color":"red"}
 execute if score $result explorer_atlas.temp matches 0 run scoreboard players set @s explorer_atlas.hud_delay 20
 execute if score $result explorer_atlas.temp matches 0 run return 0
