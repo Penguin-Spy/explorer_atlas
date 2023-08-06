@@ -9,11 +9,11 @@ execute if data entity @s SelectedItem.tag.explorer_atlas.has_compass run return
 function explorer_atlas:atlas_editing/add_item
 
 # add compass to data
-data modify storage explorer_atlas:temp item.tag.explorer_atlas.has_compass set value 1b
+data modify storage explorer_atlas:temp atlas.tag.explorer_atlas.has_compass set value 1b
 # add compass to the list (after clock if it exists, otherwise at the beginning)
-execute if data storage explorer_atlas:temp item.tag.explorer_atlas.has_clock run data modify storage explorer_atlas:temp item.tag.display.Lore insert 3 value '[" ",{"translate":"item.minecraft.compass","color":"gray","italic":false}]'
-execute unless data storage explorer_atlas:temp item.tag.explorer_atlas.has_clock run data modify storage explorer_atlas:temp item.tag.display.Lore insert 2 value '[" ",{"translate":"item.minecraft.compass","color":"gray","italic":false}]'
+execute if data storage explorer_atlas:temp atlas.tag.explorer_atlas.has_clock run data modify storage explorer_atlas:temp atlas.tag.display.Lore insert 3 value '[" ",{"translate":"item.minecraft.compass","color":"gray","italic":false}]'
+execute unless data storage explorer_atlas:temp atlas.tag.explorer_atlas.has_clock run data modify storage explorer_atlas:temp atlas.tag.display.Lore insert 2 value '[" ",{"translate":"item.minecraft.compass","color":"gray","italic":false}]'
 
 title @s actionbar {"translate":"explorer_atlas.atlas_attached_item","fallback": "Attached a %s to your explorer atlas","with": [{"translate":"item.minecraft.compass"}]}
 
-function explorer_atlas:atlas_editing/update_hand
+item modify entity @s weapon.mainhand explorer_atlas:copy_atlas_data

@@ -9,10 +9,10 @@ execute if data entity @s SelectedItem.tag.explorer_atlas.has_clock run return 1
 function explorer_atlas:atlas_editing/add_item
 
 # add clock
-data modify storage explorer_atlas:temp item.tag.explorer_atlas.has_clock set value 1b
+data modify storage explorer_atlas:temp atlas.tag.explorer_atlas.has_clock set value 1b
 # add clock to the list
-data modify storage explorer_atlas:temp item.tag.display.Lore insert 2 value '[" ",{"translate":"item.minecraft.clock","color":"gray","italic":false}]'
+data modify storage explorer_atlas:temp atlas.tag.display.Lore insert 2 value '[" ",{"translate":"item.minecraft.clock","color":"gray","italic":false}]'
 
 title @s actionbar {"translate":"explorer_atlas.atlas_attached_item","fallback": "Attached a %s to your explorer atlas","with": [{"translate":"item.minecraft.clock"}]}
 
-function explorer_atlas:atlas_editing/update_hand
+item modify entity @s weapon.mainhand explorer_atlas:copy_atlas_data

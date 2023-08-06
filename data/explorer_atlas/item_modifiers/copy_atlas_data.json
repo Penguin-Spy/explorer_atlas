@@ -1,0 +1,21 @@
+[
+  {
+    "function": "minecraft:copy_nbt",
+    "source": {
+      "type": "minecraft:storage",
+      "source": "explorer_atlas:temp"
+    },
+    "ops": [
+      {
+        "source": "atlas.tag.explorer_atlas",
+        "target": "explorer_atlas",
+        "op": "replace"
+      },
+      {
+        "source": "atlas.tag.display",
+        "target": "display",
+        "op": "replace"
+      }
+    ]
+  }
+]
