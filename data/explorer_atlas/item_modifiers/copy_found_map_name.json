@@ -1,0 +1,21 @@
+{
+  "function": "minecraft:set_name",
+  "entity": "this",
+  "name": [
+    {
+      "text": "",
+      "italic": false
+    },
+    {
+      "nbt": "found_map.tag.display.Name",
+      "storage": "explorer_atlas:temp",
+      "interpret": true,
+      "italic": true
+    },
+    " - ",
+    {
+      "translate": "item.explorer_atlas.atlas",
+      "fallback": "Explorer Atlas"
+    }
+  ]
+}

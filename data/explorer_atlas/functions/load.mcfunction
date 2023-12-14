@@ -32,12 +32,6 @@ scoreboard objectives add explorer_atlas.hud_delay dummy
 scoreboard objectives add explorer_atlas.used_map minecraft.used:minecraft.map
 
 
-# initalize the yellow shulker box & cherry sign (outside world border, y0 to work with any world height)
-execute in minecraft:overworld run forceload add -30000000 2435
-execute in minecraft:overworld run setblock -30000000 0 2435 yellow_shulker_box
-execute in minecraft:overworld run setblock -30000000 1 2435 cherry_sign
-
-
 # every tick (only for detecting/handling filling out a map item)
 schedule clear explorer_atlas:tick
 function explorer_atlas:tick

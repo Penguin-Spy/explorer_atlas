@@ -15,6 +15,11 @@
         "source": "atlas.tag.display",
         "target": "display",
         "op": "replace"
+      },
+      {
+        "source": "atlas.tag.map",
+        "target": "map",
+        "op": "replace"
       }
     ]
   }

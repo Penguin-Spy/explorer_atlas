@@ -1,0 +1,13 @@
+[
+  {
+    "function": "minecraft:set_count",
+    "count": {
+      "type": "score",
+      "target": {
+        "type": "fixed",
+        "name": "$count"
+      },
+      "score": "explorer_atlas.temp"
+    }
+  }
+]
