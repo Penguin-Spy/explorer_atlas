@@ -1,7 +1,7 @@
 execute if data storage explorer_atlas:temp string run data modify storage explorer_atlas:temp string append value '{"text":" | ","color":"dark_gray"}'
 
 # get random heading or real heading
-execute if predicate explorer_atlas:display_random run scoreboard players operation $heading explorer_atlas.temp = $random.heading explorer_atlas.temp
+execute if predicate explorer_atlas:display_random run scoreboard players operation $heading explorer_atlas.temp = #random.heading explorer_atlas.temp
 execute unless predicate explorer_atlas:display_random store result score $heading explorer_atlas.temp run data get entity @s Rotation[0]
 
 # add 180 to the heading, so 0 = north & it goes up to 360
